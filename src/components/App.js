@@ -6,6 +6,7 @@ import Header from './Header';
 import AboutUs from './About';
 import Services from './Services';
 import Portfolio from './Portfolio';
+import Statistics from './Statistics';
 
 const App = () => {
 	return (
@@ -17,6 +18,7 @@ const App = () => {
 			<AboutUs />
 			<Services />
 			<Portfolio />
+			<Statistics />
 		</>
 	);
 };

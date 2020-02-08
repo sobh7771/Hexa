@@ -8,10 +8,15 @@ const Column = styled(Div)`
 	@media screen and (max-width: 1200px) {
 		margin-right: 0 !important;
 	}
+	@media screen and (min-width: 901px) {
+		&:not(:last-child) {
+			padding-right: 1rem;
+		}
+	}
 `;
 
 const Figure = styled.figure`
-	width: max-content;
+	/* width: max-content; */
 	position: relative;
 	overflow: hidden;
 `;
@@ -19,6 +24,7 @@ const Figure = styled.figure`
 const Img = styled.img`
 	display: block;
 	transition: all 0.3s;
+	width: 100%;
 	${Figure}:hover & {
 		transform: scale(1.2);
 	}

@@ -13,3 +13,11 @@
 		width: 100% !important;
 	}
 }
+
+.one-quarter {
+	width: calc((100% - 18rem) / 4) !important;
+
+	@media screen and (max-width: 900px) {
+		width: 100% !important;
+	}
+}

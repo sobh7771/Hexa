@@ -11,10 +11,10 @@ const Title = styled.h1(props => {
 
 	const styles = {
 		primary: {
-			// ...commonStyles,
-			// 'fontFamily': "'Roboto', sans-serif",
-			// 'fontSize': '2.5rem',
-			// 'letterSpacing': '0px'
+			...commonStyles,
+			fontSize: '3.6rem',
+			color: '#6f6f6f',
+			fontWeight: 700
 		},
 		secondary: {
 			...commonStyles,
