@@ -64,10 +64,7 @@ class StatisticsItem extends React.Component {
 	render() {
 		const { icon, statisticsAbout, dataTo } = this.props;
 		return (
-			<Column
-				className="one-quarter"
-				style={styles.column}
-				data-aos="fade-down">
+			<Column className="one-quarter" style={styles.column} {...this.props}>
 				<Icon src={icon} />
 				<Heading
 					ref={this.headingRef}

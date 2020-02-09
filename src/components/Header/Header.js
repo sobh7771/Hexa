@@ -15,7 +15,9 @@ const StyledHeader = styled.header`
 	position: relative;
 	background-position-y: ${({ position }) => `${position}px`};
 	transition: ${({ scrollDirection }) =>
-		scrollDirection === 'down' ? 'all 1s' : 'all 0.5s'};
+		scrollDirection === 'down'
+			? 'background-position-y 1s'
+			: 'background-position-y 0.5s'};
 `;
 
 const Wrapper = styled.div`

@@ -8,10 +8,9 @@
 
 html {
 	font-size: 62.5%;
-	@media only screen and (max-width: 1200px) {
-		// 	font-size: 56.25%;
-		font-size: 59.375%;
-	}
+	// @media only screen and (max-width: 1200px) {
+	// 	font-size: 59.375%;
+	// }
 	height: 1000rem;
 	scroll-behavior: smooth;
 }
@@ -23,6 +22,7 @@ body {
 	font-weight: 400;
 	line-height: 1.6;
 	text-rendering: optimizeLegibility;
+	position: relative;
 }
 
 ul {
