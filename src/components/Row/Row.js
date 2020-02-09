@@ -2,7 +2,7 @@ import React from 'react';
 import Proptypes from 'prop-types';
 import styled from 'styled-components';
 
-const Div = styled.div`
+export const Div = styled.div`
 	display: flex;
 	align-items: center;
 

@@ -99,8 +99,10 @@ class Navbar extends Component {
 			const YPosition = window.scrollY;
 
 			if (YPosition > prevPosition) {
-				this.setState({ showNavbar: false, changeNav: false });
-
+				if (this.state.showNavbar) {
+					console.log('Hide navbar');
+					this.setState({ showNavbar: false });
+				}
 				prevPosition = YPosition;
 			} else {
 				if (!YPosition) {

@@ -10,6 +10,7 @@ import Statistics from './Statistics';
 import Testimonials from './Testimonials';
 import Navbar from './Navbar/Navbar';
 import Clients from './Clients';
+import Footer from './Footer';
 
 const App = () => {
 	return (
@@ -27,6 +28,7 @@ const App = () => {
 				<Testimonials />
 				<Clients />
 			</main>
+			<Footer />
 		</>
 	);
 };
