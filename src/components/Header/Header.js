@@ -13,13 +13,8 @@ const StyledHeader = styled.header`
 			? `${props.gradient}, url(${props.backgroundImage})`
 			: `url(${props.backgroundImage})`};
 	position: relative;
-	background-position-y: ${({ position }) => `${position}px`};
-	/* transition: ${({ scrollDirection }) =>
-		scrollDirection === 'down'
-			? 'background-position-y 0.2s ease-in-out'
-			: 'background-position-y 0.5s ease-in-out'}; */
-
-			transition:background-position-y 0.2s ease-in-out;
+	/* background-position-y: ${({ position }) => `${position}px`};
+	transition: all 0.8s ease-out; */
 `;
 
 const Wrapper = styled.div`
@@ -63,25 +58,25 @@ const FlexItem = styled.div`
 `;
 
 class Header extends React.Component {
-	state = {
-		position: 0,
-		scrollDirection: ''
-	};
+	// state = {
+	// 	position: 0,
+	// 	scrollDirection: ''
+	// };
 
-	componentDidMount() {
-		let initialPosition = 0;
+	// componentDidMount() {
+	// 	let initialPosition = 0;
 
-		window.onscroll = () => {
-			const position = window.scrollY;
-			let scrollDirection;
-			if (position > initialPosition) scrollDirection = 'down';
-			else scrollDirection = 'up';
+	// 	window.onscroll = () => {
+	// 		const position = window.scrollY;
+	// 		let scrollDirection;
+	// 		if (position > initialPosition) scrollDirection = 'down';
+	// 		else scrollDirection = 'up';
 
-			initialPosition = position;
+	// 		initialPosition = position;
 
-			this.setState({ position, scrollDirection });
-		};
-	}
+	// 		this.setState({ position, scrollDirection });
+	// 	};
+	// }
 
 	render() {
 		const { props, state } = this;

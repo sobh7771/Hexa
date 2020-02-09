@@ -13,7 +13,7 @@ const Section = styled.section`
 		),
 		url(${bgImg});
 	background-position-y: ${({ position }) => `${position}px`};
-	transition: all 0.2s ease-in-out;
+	/* transition: all 1.5s ease-out; */
 `;
 
 const Figure = styled.figure`
@@ -53,25 +53,27 @@ const Name = styled.h6`
 `;
 
 class Testimonials extends React.Component {
-	state = {
-		position: 0,
-		scrollDirection: ''
-	};
+	// state = {
+	// 	position: 0,
+	// 	scrollDirection: ''
+	// };
 
-	componentDidMount() {
-		let initialPosition = 0;
+	// sectionRef = React.createRef();
 
-		window.addEventListener('scroll', () => {
-			const position = window.scrollY;
-			let scrollDirection;
-			if (position > initialPosition) scrollDirection = 'down';
-			else scrollDirection = 'up';
+	// componentDidMount() {
+	// 	let initialPosition = 0;
 
-			initialPosition = position;
+	// 	window.addEventListener('scroll', () => {
+	// 		const position = this.sectionRef.current.getBoundingClientRect().y;
+	// 		let scrollDirection;
+	// 		if (position < initialPosition) scrollDirection = 'down';
+	// 		else scrollDirection = 'up';
 
-			this.setState({ position, scrollDirection });
-		});
-	}
+	// 		initialPosition = position;
+
+	// 		this.setState({ position: position * -1, scrollDirection });
+	// 	});
+	// }
 
 	render() {
 		return (

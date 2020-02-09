@@ -8,7 +8,7 @@ const StyledNavbar = styled.nav`
 	top: 0;
 	left: 0;
 	z-index: 100;
-	transition: background-color 0.3s ease-in-out, position 0.1s ease-in-out;
+	transition: all 0.2s;
 	padding: 0 5rem;
 	display: flex;
 	align-items: center;
@@ -92,14 +92,13 @@ class Navbar extends Component {
 		showNavbar: true,
 		changeNav: false
 	};
+
 	componentDidMount() {
 		let prevPosition = 0;
 		window.addEventListener('scroll', () => {
 			const YPosition = window.scrollY;
 
 			if (YPosition > prevPosition) {
-				console.log('Down');
-
 				this.setState({ showNavbar: false, changeNav: false });
 
 				prevPosition = YPosition;
@@ -115,13 +114,16 @@ class Navbar extends Component {
 
 	handleClick = () =>
 		this.setState(state => ({ showNavbarNav: !state.showNavbarNav }));
+
 	handleBlur = () => this.setState({ showNavbarNav: false });
+
 	render() {
 		let logo = require('../../Assets/images/Bitmap.svg');
 
 		if (this.state.changeNav && window.outerWidth <= 900) {
 			logo = require('../../Assets/images/logo-page.svg');
 		}
+
 		return (
 			<StyledNavbar {...this.state}>
 				<a href="/">
