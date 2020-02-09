@@ -9,6 +9,7 @@ import Portfolio from './Portfolio';
 import Statistics from './Statistics';
 import Testimonials from './Testimonials';
 import Navbar from './Navbar/Navbar';
+import Clients from './Clients';
 
 const App = () => {
 	return (
@@ -18,11 +19,14 @@ const App = () => {
 				backgroundImage={require('../Assets/images/about-banner.jpg')}
 				gradient="linear-gradient(90deg, rgba(0,0,0,.7), rgba(0,0,0,.7))"
 			/>
-			<AboutUs />
-			<Services />
-			<Portfolio />
-			<Statistics />
-			<Testimonials />
+			<main>
+				<AboutUs />
+				<Services />
+				<Portfolio />
+				<Statistics />
+				<Testimonials />
+				<Clients />
+			</main>
 		</>
 	);
 };

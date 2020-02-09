@@ -8,7 +8,7 @@ const StyledNavbar = styled.nav`
 	top: 0;
 	left: 0;
 	z-index: 100;
-	transition: background-color 0.3s ease-out, position 0.1s ease-out;
+	transition: background-color 0.3s ease-in-out, position 0.1s ease-in-out;
 	padding: 0 5rem;
 	display: flex;
 	align-items: center;

@@ -27,21 +27,18 @@ const Statistics = props => {
 						statisticsAbout="Clients"
 						dataTo={130}
 						data-aos="fade-down"
-						data-aos-duration="500"
 					/>
 					<StatisticsItem
 						icon={require('../../Assets/images/idea.svg')}
 						statisticsAbout="Projects"
 						dataTo={120}
 						data-aos="fade-down"
-						data-aos-duration="900"
 					/>
 					<StatisticsItem
 						icon={require('../../Assets/images/network.svg')}
 						statisticsAbout="Employees"
 						dataTo={25}
 						data-aos="fade-down"
-						data-aos-duration="1300"
 					/>
 				</Row>
 			</Container>

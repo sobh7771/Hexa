@@ -1,7 +1,5 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel';
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import styled from 'styled-components';
 import Container from '../Container';
 import bgImg from '../../Assets/images/parallax-bg28.jpg';
@@ -9,20 +7,17 @@ import bgImg from '../../Assets/images/parallax-bg28.jpg';
 const Section = styled.section`
 	padding: 13rem 0;
 	background-image: linear-gradient(
-			9deg,
+			90deg,
 			rgba(0, 0, 0, 0.7),
 			rgba(0, 0, 0, 0.7)
 		),
 		url(${bgImg});
 	background-position-y: ${({ position }) => `${position}px`};
-	transition: ${({ scrollDirection }) =>
-		scrollDirection === 'down' ? 'all 1s' : 'all 0.5s'};
+	transition: all 0.2s ease-in-out;
 `;
 
 const Figure = styled.figure`
-	/* background-color: green; */
 	margin-right: 6rem;
-
 	@media screen and (max-width: 900px) {
 		margin-right: 0;
 		margin-bottom: 3rem;

@@ -22,6 +22,13 @@ const Title = styled.h1(props => {
 			fontSize: '2.5rem',
 			letterSpacing: '0px'
 		},
+		'secondary--2': {
+			...commonStyles,
+			fontFamily: "'Roboto', sans-serif",
+			letterSpacing: '0px',
+			color: '#232323',
+			fontSize: '3.6rem'
+		},
 		tertiary: {
 			...commonStyles,
 			fontSize: '1.8rem',

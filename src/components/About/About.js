@@ -18,13 +18,13 @@ const About = props => {
 		<Section>
 			<Container>
 				<Row>
-					<Column className="half">
+					<Column className="half" data-aos="fade-right">
 						<Image
 							src={require('../../Assets/images/1539674290_63351.jpg')}
 							width="100%"
 						/>
 					</Column>
-					<Column className="half">
+					<Column className="half" data-aos="fade-left">
 						<Heading as="h4" type="quaternary" className="mb--1rem">
 							Integrated services for a perfect outcome.
 						</Heading>

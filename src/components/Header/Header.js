@@ -14,10 +14,12 @@ const StyledHeader = styled.header`
 			: `url(${props.backgroundImage})`};
 	position: relative;
 	background-position-y: ${({ position }) => `${position}px`};
-	transition: ${({ scrollDirection }) =>
+	/* transition: ${({ scrollDirection }) =>
 		scrollDirection === 'down'
-			? 'background-position-y 1s'
-			: 'background-position-y 0.5s'};
+			? 'background-position-y 0.2s ease-in-out'
+			: 'background-position-y 0.5s ease-in-out'}; */
+
+			transition:background-position-y 0.2s ease-in-out;
 `;
 
 const Wrapper = styled.div`

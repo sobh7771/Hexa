@@ -1,22 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { Div } from '../../Column/Column';
 import Link from '../../Link';
 
-const Column = styled(Div)`
-	@media screen and (max-width: 1200px) {
-		margin-right: 0 !important;
-	}
-	@media screen and (min-width: 901px) {
-		&:not(:last-child) {
-			padding-right: 1rem;
-		}
-	}
-`;
-
 const Figure = styled.figure`
-	/* width: max-content; */
 	position: relative;
 	overflow: hidden;
 `;
@@ -76,21 +63,17 @@ const Body = styled.p`
 	width: 95%;
 `;
 
-const PortfolioItem = ({ imgSrc, title, body, to }) => {
-	return (
-		<Column>
-			<Link basic href={to}>
-				<Figure>
-					<Img src={imgSrc} />
-					<Figcaption>
-						<Title>{title}</Title>
-						<Body>{body}</Body>
-					</Figcaption>
-				</Figure>
-			</Link>
-		</Column>
-	);
-};
+const PortfolioItem = ({ imgSrc, title, body, to }) => (
+	<Link basic href={to}>
+		<Figure>
+			<Img src={imgSrc} />
+			<Figcaption>
+				<Title>{title}</Title>
+				<Body>{body}</Body>
+			</Figcaption>
+		</Figure>
+	</Link>
+);
 
 PortfolioItem.propTypes = {
 	imgSrc: PropTypes.string.isRequired,
