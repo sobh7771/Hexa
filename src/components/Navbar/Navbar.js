@@ -7,7 +7,7 @@ const StyledNavbar = styled.nav`
 	position: absolute;
 	top: 0;
 	left: 0;
-	z-index: 1;
+	z-index: 100;
 	transition: background-color 0.3s ease-out, position 0.1s ease-out;
 	padding: 0 5rem;
 	display: flex;
@@ -119,7 +119,7 @@ class Navbar extends Component {
 	render() {
 		let logo = require('../../Assets/images/Bitmap.svg');
 
-		if (this.state.changeNav && !(window.screen.availWidth > 900)) {
+		if (this.state.changeNav && window.outerWidth <= 900) {
 			logo = require('../../Assets/images/logo-page.svg');
 		}
 		return (
