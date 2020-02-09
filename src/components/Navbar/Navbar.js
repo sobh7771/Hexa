@@ -119,7 +119,7 @@ class Navbar extends Component {
 	render() {
 		let logo = require('../../Assets/images/Bitmap.svg');
 
-		if (this.state.changeNav) {
+		if (this.state.changeNav && !(window.screen.availWidth > 900)) {
 			logo = require('../../Assets/images/logo-page.svg');
 		}
 		return (
