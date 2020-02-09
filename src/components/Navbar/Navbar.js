@@ -99,16 +99,21 @@ class Navbar extends Component {
 			const YPosition = window.scrollY;
 
 			if (YPosition > prevPosition) {
+				// Down Scrolling
 				if (this.state.showNavbar) {
-					console.log('Hide navbar');
 					this.setState({ showNavbar: false });
 				}
 				prevPosition = YPosition;
 			} else {
+				// Up Scrolling
 				if (!YPosition) {
-					this.setState({ showNavbar: true, changeNav: false });
+					if (!this.state.showNavbar || this.state.changeNav) {
+						this.setState({ showNavbar: true, changeNav: false });
+					}
 				} else if (YPosition) {
-					this.setState({ showNavbar: true, changeNav: true });
+					if (!this.state.showNavbar) {
+						this.setState({ showNavbar: true, changeNav: true });
+					}
 				}
 			}
 		});

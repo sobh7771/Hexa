@@ -11,6 +11,7 @@ import Testimonials from './Testimonials';
 import Navbar from './Navbar/Navbar';
 import Clients from './Clients';
 import Footer from './Footer';
+import ScrollToTopBtn from './ScrollToTopBtn/ScrollToTopBtn';
 
 const App = () => {
 	return (
@@ -29,6 +30,7 @@ const App = () => {
 				<Clients />
 			</main>
 			<Footer />
+			<ScrollToTopBtn />
 		</>
 	);
 };
