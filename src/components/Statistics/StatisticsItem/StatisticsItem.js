@@ -6,7 +6,6 @@ import Column from '../../Column';
 const Icon = styled.img`
 	width: 6rem;
 	height: 5rem;
-	/* display: block; */
 `;
 
 const Heading = styled.h4`
@@ -20,60 +19,48 @@ const Span = styled.span`
 
 const styles = {
 	heading: {
-		color: '#00ca9d'
+		color: '#00ca9d',
 	},
 	column: {
-		textAlign: '-webkit-center'
-	}
+		textAlign: '-webkit-center',
+	},
 };
 
 class StatisticsItem extends React.Component {
 	state = {
-		counter: 0
+		count: 0,
 	};
 
-	headingRef = React.createRef();
+	ref = React.createRef();
 
 	componentDidMount() {
-		const el = this.headingRef.current;
-		const countTo = el.getAttribute('data-to');
-		const countSpeed = el.getAttribute('data-speed');
-		window.addEventListener('scroll', e => {
-			const YPosition = el.getBoundingClientRect().y;
+		const observer = new IntersectionObserver((entries, observer) => {
+			entries.forEach(({ isIntersecting, target }) => {
+				if (isIntersecting) {
+					const id = setInterval(() => {
+						this.setState((s) => ({ count: s.count + 1 }));
 
-			if (YPosition >= -76.25 && YPosition <= 683.75) {
-				if (this.state.counter === 0) {
-					this.startCount(countTo, countSpeed);
+						if (this.state.count >= this.props.dataTo) {
+							window.clearInterval(id);
+						}
+					}, 10);
+					observer.unobserve(target);
 				}
-			}
+			});
 		});
+
+		observer.observe(this.ref.current);
 	}
 
-	startCount = (countTo, countSpeed) => {
-		this.setState(state => ({ counter: state.counter + 1 }));
-
-		if (this.state.counter >= countTo) {
-			return;
-		}
-
-		setTimeout(() => {
-			this.startCount(countTo, countSpeed);
-		}, 1 / parseFloat(countSpeed));
-	};
-
 	render() {
-		const { icon, statisticsAbout, dataTo } = this.props;
+		const { icon, statisticsAbout } = this.props;
 		return (
 			<Column className="one-quarter" style={styles.column} {...this.props}>
-				<Icon src={icon} />
-				<Heading
-					ref={this.headingRef}
-					data-to={dataTo}
-					data-speed="2000"
-					style={styles.heading}>
-					{this.state.counter}
-				</Heading>
-				<Span>{statisticsAbout}</Span>
+				<div ref={this.ref}>
+					<Icon src={icon} />
+					<Heading style={styles.heading}>{this.state.count}</Heading>
+					<Span>{statisticsAbout}</Span>
+				</div>
 			</Column>
 		);
 	}
@@ -82,7 +69,7 @@ class StatisticsItem extends React.Component {
 StatisticsItem.propTypes = {
 	icon: PropTypes.string.isRequired,
 	statisticsAbout: PropTypes.string.isRequired,
-	dataTo: PropTypes.number.isRequired
+	dataTo: PropTypes.number.isRequired,
 };
 
 export default StatisticsItem;
